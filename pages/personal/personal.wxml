@@ -1,0 +1,52 @@
+<!--pages/personal/personal.wxml-->
+<view class="page-body-info">
+ <view class="current-info">
+    <image class="userinfo-avatar" src="{{avatarUrl}}"></image>
+    <button size="mini"  open-type="getUserInfo" bindgetuserinfo="userinfo" hover-class="none" disabled="{{alse}}"class="userinfo-nickname">{{nickName}}</button>
+    </view>
+</view>
+
+<view class="menu">
+   <view class="order"><view class="myorder">我的订单</view></view>
+   <view style="border:1px solid #929090;width:90%;margin:0.3rem auto;"></view>
+   <view class="menu-opption">
+      <view catchtap="menuopption" id="0" class="menu-opption-wrap">
+         <image class="menu-opption-src"src="/images/payment.png"></image>
+         <view class="menu-opption-detill">待付款</view>
+         <mp-badge content="{{waitpaybadge}}" class="showbadge {{pay?'show':''}}" />
+      </view>
+       <view catchtap="menuopption" id="1" class="menu-opption-wrap">
+         <image class="menu-opption-src"src="/images/wait.png"></image>
+         <view class="menu-opption-detill">待配送</view>
+         <mp-badge content="{{deliverbadge}}" class="showbadge {{deliver?'show':''}}" />
+      </view>
+       <view catchtap="menuopption" id="2" class="menu-opption-wrap">
+         <image class="menu-opption-src"src="/images/get.png"></image>
+         <view class="menu-opption-detill">待确认</view>
+         <mp-badge content="{{confirmbadge}}" class="showbadge {{confirm?'show':''}}" />
+      </view>
+       <view catchtap="menuopption" id="3" class="menu-opption-wrap">
+         <image class="menu-opption-src"src="/images/retreat.png"></image>
+         <view class="menu-opption-detill">退换货</view>
+         <mp-badge content="{{quitbadge}}" class="showbadge {{quit?'show':''}}" />
+      </view>
+
+
+
+   </view>
+</view>
+
+<view class="term-list">
+  <view class="term set" catchtap="setter">
+     <view class="term-deltill"><image class="mark" src="/images/set.png"/>设置</view><view class="sign"></view>
+  </view>
+  <view class="term addr"  catchtap="address">
+    <view class="term-deltill"><image  class="mark"src="/images/addr.png"/>地址管理</view><view class="sign"></view>
+  </view>
+  <view class="term collect" catchtap="collect">
+    <view class="term-deltill"><image class="mark" src="/images/collect.png"/>我的收藏</view><view class="sign"></view>
+  </view>
+  <view class="term shoppingcart" catchtap="shoppingcart">
+    <view class="term-deltill"><image class="mark" src="/images/shoppingcart.png"/>购物车</view><view class="sign"></view>
+  </view>
+</view>

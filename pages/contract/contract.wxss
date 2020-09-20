@@ -1,0 +1,4 @@
+/* pages//contract/contract.wxss */
+.activity-title{margin:2rem auto;font-size: x-large;font-weight: bolder;text-align:center;}
+.activity-content{width:90%;text-indent: 2em;margin:0 auto;line-height:2rem ;}
+.understand{margin:40px auto; color:green;}

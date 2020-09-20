@@ -1,0 +1,36 @@
+<!--pages/querycommunity/querycommunity.wxml-->
+<form bindsubmit="querycommunity">
+ <view  class="queryform">
+  <input class="queryinput" name="unityname" type="text" placeholder="请输入您要查询的社区"/>
+  <button size="default" formType="submit" type="primary" disabled='{{active}}'  class="btn">查询</button>
+ </view>
+</form>
+
+<!--queryresult-->
+<view wx:if="{{query_result}}" class="query-result">
+  <view>您所查询的：</view>
+  <view class="query-info"><view>{{communityname}}</view><view>{{condition}}</view></view>
+</view>
+
+<!--lookovercommuity-->
+<view class="near-community" >
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" >
+  <view class="section">
+   <view class="picker">点击切换:</view>
+    <view class="picker">{{region[0]}}</view>
+    <view class="picker">{{region[1]}}</view>
+    <view class="picker">{{region[2]}}</view>
+ </view>
+  </picker>
+ 
+<view wx:if="{{communityrecord}}" class="nearcommunity-descripe">
+<view>已开通社区:</view>
+<view wx:for="{{community}}" wx:key="id" class="nearcommunity-descripe-item">{{item}}</view>
+</view>
+<view wx:else class="nearcommunity-descripe">暂无开通社区</view>
+</view>
+
+
+
+
+<button size="default"  catchtap="unitycp" class="unitycp" send-message-title="申请社区营运" open-type="contact" show-message-card="true">我要申请成为社区运营</button>

@@ -1,0 +1,34 @@
+/* pages/address/address.wxss */
+page{background-color: rgb(236, 233, 233);}
+.addressinfo-wrap{border:0;}
+.addressinfo{margin-top:0.5rem;background-color: #fff;padding:0.2rem 1.5rem;font-size:10pt;color:rgb(87, 84, 84)}
+.address-per{display:flex;flex-flow:row nowrap;margin:1rem auto;}
+.address-tel{margin-left:0.2rem;}
+.address-fun{display:flex;flex-flow:row nowrap;justify-content:space-between;border-top: 1px solid rgb(219, 216, 216);color:rgb(205, 209, 202);margin-top:0.5rem;padding-top:0.5rem;font-size:9pt;align-items: center;margin-bottom: 0.8rem;}
+.address-nav{display:flex;flex-flow:row nowrap;}
+.address-opt{margin-left:20rpx;}
+.on{color: red;}
+
+.addrget{margin-top: 6rem;}
+.address{width:80%;padding:0.5rem;margin:0.5rem auto;text-align:center;border-radius: 15rpx;color:floralwhite;}
+.wexinget{background-color: rgb(85, 189, 99);}
+.addnew{background-color:rgb(175, 175, 151);}
+
+.addressform{background-color: #fff;width:95%;position:fixed;top:6rem;left:0;right:0;z-index: 100;margin-left:auto;margin-right:auto;border-radius:15rpx;}
+.addressform-title{text-align: center;height:2.5rem;line-height: 2.5rem;border-bottom: 1px solid rgb(235, 233, 233);font-size:10pt;font-weight: bolder;}
+.addressform-cancel{float:right;margin-right: 0.6rem;color: rgb(219, 216, 216);}
+.itemterm{display:flex;margin:10px auto;border-bottom: 1px solid rgb(235, 233, 233);padding:0.2rem;align-items: center;}
+label{width:85px;font-size:9pt;text-align:right;font-weight: bold;}
+.address-form-txt{width:70%;height:2.5rem;word-break: break-all; word-wrap:break-word;}
+.addressform-save{margin:2rem  auto 0.5rem;color:floralwhite;background-color: rgb(85, 189, 99);}
+
+/* 遮罩 */
+.shade{width: 100%;height: 100%;position: fixed;top: 0;left: 0; background-color:rgba(0,0,0,0.3);z-index: 2;}
+.com-picker-shadow  .true{ -webkit-transition: opacity 0.35s, visibility 0.35s;transition: opacity 0.35s, visibility 0.35s;visibility: visible;opacity: 1;}
+.com-picker-shadow .false{visibility: hidden;opacity: 0;  -webkit-transition: opacity 0.35s, visibility 0.35s;transition: opacity 0.35s, visibility 0.35s;}
+
+.getphone{font-size: small !important;}
+
+
+
+

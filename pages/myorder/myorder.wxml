@@ -1,0 +1,39 @@
+<!--pages/myorder/myorder.wxml-->
+<view class="order-wrap">
+<view class="apppint, {{id==index?'on':''}}"  wx:for="{{ordermenu}}" wx:key="unique" id="{{index}}" catchtap="orderselect">{{item}}</view></view>
+<view wx:if="{{data.length>0}}">
+<view wx:for="{{data}}" wx:key="id" id="{{index}}" class="date-box" >
+<view class="orderNo"style="">订单编号:{{item._id}}</view>
+<block wx:for="{{item.order}}" wx:key="id">
+<view class="data-wrap">
+  <view><image src="{{item.imglist[0].src}}"style="width:200rpx;height:200rpx"/></view>
+  <view class="bechoice-detill">
+    <view class="bechoice-detill-name">{{item.name}}</view>
+    <view class="bechoice-detill-price"><view>{{item.price}}/{{item.unity}}</view><view class="bechoice-detill-price-num">X{{item.num}}</view></view>
+    </view>
+</view>
+</block>
+<view class="bechoice-detill-amount">总价：￥{{m1.getMax(item.order)}}元</view>
+<view wx:if="{{pay}}" class="controlbox"><view class="controlbox-item" catchtap="falseorder" id="{{index}}">取消订单</view>
+<view class="controlbox-item pay"  catchtap="payorder" id="{{index}}">去支付</view></view>
+<view wx:if="{{deliver}}" class="controlbox"><view class="controlbox-item paid"  id="{{index}}">已付款</view></view>
+<view wx:if="{{confirm}}" class="controlbox"><view class="controlbox-item" catchtap="confirmorder" id="{{index}}">确认到货</view></view>
+<view wx:if="{{quit}}">
+<view wx:if="{{item.quit}}" class="controlbox"><view class="controlbox-item"  id="{{index}}">已退货</view></view>
+<view wx:else class="controlbox"><view class="controlbox-item" catchtap="{{!item.condition?'applyquit':''}}" id="{{index}}">{{!item.condition?"申请退货":"申请中..."}}</view></view>
+</view>
+</view>
+
+</view>
+<view wx:else><view class="nodata"><image src="/images/ordercenter.png"></image><view>暂无相关订单</view></view></view>
+
+<wxs module="m1">
+  var getMax = function(array) {
+    var x= [];
+    for (var i = 0; i < array.length; ++i) {       
+        x.push( array[i].price*array[i].num)      
+    }
+    return x.reduce(function(a,b){return a + b;},0);;
+  }  
+  module.exports.getMax = getMax;
+  </wxs>

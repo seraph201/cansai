@@ -1,0 +1,10 @@
+{"navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",  
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "navigationBarTitleText": "我的",
+  "enablePullDownRefresh":false,
+  "usingComponents": {
+    "mp-badge": "/components/badge/badge"
+  }
+}

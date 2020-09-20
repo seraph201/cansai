@@ -1,0 +1,64 @@
+<!--pages/resourcesdisplace/resourcesdisplace.wxml-->
+<view class="container"><button class="myaccount" size="mini" catchtap="myaccount">我的账户</button></view>
+<view class="resource-title">可置换资源</view>
+<view class="menu-opption">
+<view  class="menu-title">日杂类</view>
+<view  class="menu-wrap">
+  <view wx:for="{{resource}}" wx:key="unique" catchtap="onresources" id="{{index}}" data-num="0" class="menu-opption-wrap" data-classify="{{item.name}}" data-unit="{{item.unit}}" data-baseprice="{{item.baseprice}}">
+      <image class="menu-opption-wrap-src"src="{{item.src}}"></image>
+      <view class="menu-opption-wrap-detill,{{current==index?'on':''}}">{{item.name}}</view>
+  </view>
+  </view>
+  <view style="text-align:center;margin-top:2rem;color:red">*点击以上选项，即刻发起预约兑换（需拆装，请备注）</view>
+  <button class="applyclassify" data-num="0" catchtap="addclassify"send-message-title="增加日杂类分类" open-type="contact" show-message-card="true">没有我的物品，申请添加分类</button>
+</view>
+
+<view class="menu-opption">
+<view class="menu-title">家电类</view>
+<view class="menu-wrap">
+  <view wx:for="{{electric}}" wx:key="id" catchtap="onresources" id="{{index}}" data-num="1" class="menu-opption-wrap" data-classify="{{item.name}}" data-unit="{{item.unit}}" data-baseprice="{{item.baseprice}}">
+      <image class="menu-opption-wrap-src"src="{{item.src}}"></image>
+      <view class="menu-opption-wrap-detill,{{current==index?'on':''}}">{{item.name}}</view>
+  </view>
+  </view>
+   <view style="text-align:center;margin-top:2rem;color:red">*点击以上选项，即刻发起预约兑换（需拆装，请备注）</view>
+   <button class="applyclassify" data-num="1" catchtap="addclassify" send-message-title="增加家电类分类" open-type="contact" show-message-card="true">没有我的物品，申请添加分类</button>
+</view>
+
+
+<view class="menu-opption">
+<view class="menu-title">厨房设施</view>
+<view  class="menu-wrap">
+  <view wx:for="{{kitchen}}" wx:key="id" catchtap="onresources" id="{{index}}" data-num="2"  class="menu-opption-wrap" data-classify="{{item.name}}" data-unit="{{item.unit}}" data-baseprice="{{item.baseprice}}">
+      <image class="menu-opption-wrap-src"src="{{item.src}}"></image>
+      <view class="menu-opption-wrap-detill,{{current==index?'on':''}}">{{item.name}}</view>
+  </view>
+  </view>
+   <view style="text-align:center;margin-top:2rem;color:red">*点击以上选项，即刻发起预约兑换（需拆装，请备注）</view>
+   <button class="applyclassify" data-num="2" catchtap="addclassify" send-message-title="增加厨房设施类分类" open-type="contact" show-message-card="true">没有我的物品，申请添加分类</button>
+</view>
+
+<view class="shade {{showmodel}}" wx:if="{{isShadow}}"></view>
+<view class="box"  wx:if="{{showmodel}}">  
+<form bindsubmit="formSubmit">
+      <view class="warn">{{condition?'*请输入您的账号密码':'*即将为您创建账号'}}</view>    
+          <view class="colum">      
+              <text  class="list">账户：</text>
+              <input class="input" name="account" maxlength="11" value="{{account}}" placeholder="请输入手机号码"></input>       
+          </view>      
+          <view class="colum">
+              <view class='list'>密码：</view>
+              <input class='input' name="secret"  password="true" value="{{secret}}" placeholder="请输入密码" maxlength="10"></input>
+          </view>
+  <view id="confirm">
+<radio-group name="check"  >
+  <view class="radio-wrap"><radio disabled='{{!acbtn? true : false}}' class="checkappoint"  checked="{{onselect}}" value="true"></radio><text class='contract'  bindtap='contractpage'>请阅读活动约定</text></view>
+   </radio-group>
+</view>
+  <view class='button'>
+      <button class='button_item' catchtap="canselmodel" > 取消</button>
+      <button  class='button_item button_apply' formType="submit">{{condition?'登录':'申请'}}</button>
+  </view>
+  </form>
+    </view>
+

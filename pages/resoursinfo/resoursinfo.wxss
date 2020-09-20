@@ -1,0 +1,16 @@
+/* pages/resoursinfo/resoursinfo.wxss */
+.goodstitle{font-size: 10pt;color: rgb(170, 166, 166);padding:1.5rem;border-top: 1px solid rgb(197, 192, 192);border-bottom: 1px solid rgb(197, 192, 192);}
+.goodstitle text{color: black;margin-left: 0.5rem;}
+.itemterm{font-size: 9pt;width:90%;margin:1rem auto;display: flex;align-items: center;justify-content: center;}
+.itemterm input{width:10%;border-bottom: 1px solid rgb(202, 200, 200);display: inline-block;text-align: center;}
+.itemterm text{font-weight: bold;}
+.ontextarea{padding-left:1.5rem;margin-top:1rem;font-size: 9pt;color: rgb(170, 166, 166);}
+.ontextarea textarea{border:1px solid rgb(223, 219, 219);margin:0.5rem auto;height:10rem;width:80%;}
+.attions{width: 95%;padding:0.5rem;margin:2rem auto;font-size: 9pt;border:1px solid rgb(221, 218, 218);box-sizing: border-box;border-radius: 15rpx;}
+.attions-item{line-height: 1.5rem;margin-top:0.5rem;}
+#payment{font-size: 12pt;color: red;margin-bottom: 3rem;}
+#stored{height:2rem;margin:20px auto;padding-top:5px;border:1px solid rgb(221, 221, 221);border-radius:25px;text-align: center;}
+.showattion{font-size:8pt;color:red;text-align: center;}
+.reserve-time{display: flex;flex-flow: row nowrap;align-items: center; background-color: #fff;height:70rpx;padding:0.5rem;font-size:9pt;color:#777575;justify-content: center;}
+.reserve-time picker{margin-left:0.2rem;padding:0.2rem;}
+.picker{border:1px solid rgb(88, 87, 87);width:75px;text-align: center;}

@@ -1,0 +1,36 @@
+/* components/keyboard/keyboard.wxss */
+/*支付对话框*/
+.paytoken{width:80%;background-color: white;border-radius: 15rpx;margin-left: auto;margin-right: auto;z-index: 100;padding:0.5rem;left:0;right:0; z-index:100;
+position:fixed;}
+.paytitle{position: relative;padding:0.5rem;text-align: center;}
+.paycontrol::after{content: "请输入支付密码";width: 100%;text-align: center;position:absolute;left:0;top:0.5rem;font-size: 11pt;color:black}
+.paycontrol{color:#bfbfbf;font-size: 10pt;font-size: 10pt;z-index: 100;width: 10%;}
+.paymark{text-align: center;margin:1rem auto;font-size: 11pt;}
+.payamount{font-weight: 800;font-size: x-large;text-align: center;}
+.payamount-last-child {font-size: xx-large;vertical-align: sub;}
+.paymentstyle{display: flex;flex-flow: row nowrap;justify-content: space-between;align-items: center;border-top:1px solid #bfbfbf;padding:0.8rem;font-size: 9pt;margin-top:0.5rem}
+.paymentstyle .mark{width:25rpx;height:25rpx;margin-right:0.2rem;vertical-align: baseline;}
+/* 输入框 */
+.password-input {display: flex; border: 1px solid #ddd;margin: 0 auto;margin:0.5rem; }
+.password-input view {width: 110rpx; height: 80rpx; display: flex; align-items: center;justify-content: center;box-sizing: border-box;border-right: 1px solid #ccc;}
+.password-input view:nth-child(6) {  border-right: none;}
+.password-input view text {width: 6px;height: 6px;border-radius: 50%;background-color: #333;}
+
+/* 键盘 */
+.keyboard-box{background-color: white;margin-top: 5rem; position:fixed;bottom:0;width:100%;left:0;right:0; z-index:100;}
+.conctrolbox{height: 0.8rem;padding:0.2rem;}
+.sign{border-right:1px solid rgb(230, 230, 241);border-bottom: 1px solid rgb(230, 230, 241);width:20rpx;height:20rpx;transform:rotate(45deg);margin:0 auto; }
+.keyboard-row{display:grid;align-items: center;border-top:1px solid rgb(230, 230, 241);grid-template-columns: repeat(3,33.33%);}
+.keyboard-row-item{text-align: center;font-size: 16pt;padding:0.3rem;box-sizing: border-box;}
+.right-border{border-right: 1px solid rgb(230, 230, 241)}
+.left-border{border-left:1px solid  rgb(230, 230, 241)}
+.d4{ border-width: 8px;border-style: solid; border-color: transparent black transparent transparent;}
+.dd{background-color: black;color:white;width:16px;font-size:8pt;height: 16px;line-height: 16px;}
+.del-control{display: flex;flex-flow: row nowrap;align-items: center;justify-content: center;background: rgb(187, 182, 181);width:100%;height:100%;}
+.active{background-color: rgb(121, 109, 109);}
+
+
+/* 遮罩 */
+.comshadow{width: 100%;height: 100%;position: fixed;top: 0;left: 0; background-color:rgba(0,0,0,0.3);z-index: 1}
+.comshadow.true{ -webkit-transition: opacity 0.35s, visibility 0.35s;transition: opacity 0.35s, visibility 0.35s;visibility: visible;opacity: 1;}
+.comshadow.false{visibility: hidden;opacity: 0;  -webkit-transition: opacity 0.35s, visibility 0.35s;transition: opacity 0.35s, visibility 0.35s;}

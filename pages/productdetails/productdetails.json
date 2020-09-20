@@ -1,0 +1,9 @@
+{"navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "mp-badge": "/components/badge/badge"
+  }
+}

@@ -1,0 +1,20 @@
+/* pages/myorder/myorder.wxss */
+page{background-color: rgb(248, 246, 246);}
+.order-wrap{display: flex;flex-flow:row norap;justify-content: space-between;margin-top:0.5rem;border-bottom: 1px solid #929090;padding-bottom: 0.5rem;}
+.apppint{flex:5;text-align: center;font-size:8pt;}
+.on{color:red;}
+.nodata{width:30%;margin:6rem auto;display: flex;flex-direction: column;align-items: center;color: #929090;}
+.nodata image{width:69px;height:81px;margin-bottom: 0.5rem;}
+
+.date-box{background: white;padding:0.5rem 0;margin:0.3rem auto;width:95%;}
+.data-wrap{background-color:#fff;display: flex;flex-flow: row nowrap;margin: 0.5rem auto;width:100%;align-items: center;padding-left:0.5rem;}
+.bechoice-detill{font-size:10pt;width:100%;padding:0.5rem;}
+.bechoice-detill-name{width:95%;height:2.5rem;overflow:hidden;white-space:normal;}
+.bechoice-detill-price{display: flex;flex-flow: row nowrap;justify-content: space-between;}
+.bechoice-detill-price-num{margin-right: 1.5rem;font-weight: bolder;}
+.bechoice-detill-amount{text-align: right;font-size: 9pt;padding: 0 0.5rem;}
+.controlbox{display: flex;flex-flow: row nowrap;justify-content: flex-end;border-top:1px solid #929090;padding:0.5rem;background-color:#fff;font-size: 9pt;}
+.controlbox-item{border:1px solid #929090;width:25%;text-align: center;margin-left: 0.5rem;border-radius: 15px;}
+.paid{color:red;border:none;}
+.pay{background: red;color:white;border:0;}
+.orderNo{width:55%;overflow: hidden;text-overflow: ellipsis;word-break: keep-all;white-space: nowrap;color:red;margin:0.5rem 0;padding:0.2rem;font-size:9pt;}

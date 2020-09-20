@@ -1,0 +1,77 @@
+<!--pages/payment/payment.wxml-->
+
+<view class="term"><view>配送方式：</view><view class="deliverymethod" >送货到家</view></view>
+  <view wx:if="{{addrchange}}">
+    <view class="deliver-customer-info">
+      <image class="deliver-customer-info-image" src="/images/dispatch.png"></image>
+      <view>您还没有收货地址呢！</view>
+      <view class="deliver-customer-info-add" catchtap="addtheaddress">点击添加</view>
+      <view class="deliver-customer-area" catchtap="deliveryarea"><view>查看配送须知</view><view class="deliver-customer-area-sign"></view></view>
+    </view>
+      
+  </view>
+   <view wx:else>
+       <view wx:for="{{addresslist}}" wx:key="unique" class="addressinfo" >
+         <view class="address-per"><view>收货人:{{item.name}}</view><view class="address-tel">{{item.tel}}</view></view>
+         <view>收货地址:{{item.community}}{{item.detail}}</view>
+       </view>
+   </view>
+
+
+<view class="productlist">产品列表</view>
+<view wx:for="{{bechoice}}" wx:key="unique" id="{{index}}"class="bechoice-wrap"  catchtap="product_info">
+  <view><image src="{{item.imglist[0].src}}"style="width:200rpx;height:200rpx"/></view>
+  <view class="bechoice-detill">
+  <view class="bechoice-detill-control" catchtap="delindex" id="{{index}}">删除</view>
+    <view class="bechoice-detill-name">{{item.name}}</view>
+    <view class="bechoice-detill-price">{{item.price}}/{{item.unity}}</view>
+    <view class="amount">
+      <view class="amount-label">数量:</view>
+      <view class="amount-control">
+        <view class="stepper" id='variable'> 
+          <!-- 减号 -->
+          <text class="{{minusStatus}}" catchtap="bindMinus" id="{{index}}">-</text> 
+          <!-- 数值 -->
+          <input type="number" bindchange="bindManual" value="{{item.num}}" disabled='true' /> 
+          <!-- 加号 -->
+          <text class="normal" catchtap="bindPlus" id="{{index}}">+</text> 
+        </view>
+      </view>
+    </view>
+   
+  </view>
+</view>
+
+
+<view class="reserve-time">预约时间：
+  <picker mode="date" value="{{date}}" start="{{date}}" end="2099-12-31" bindchange="dateChange"><view class="picker">{{ currentdate}} </view></picker>
+  <picker mode="time" value="{{time}}" start="{{time}}" end="21:01" bindchange="freqChange"><view class="picker"> {{currenttime}}</view></picker>
+  </view>
+<view class="term">合计金额：<view>￥{{amount}}</view></view>
+
+<view class="defaultpay" >
+<view class="term" id="0" catchtap="selectpayment">
+  <view><image class="mark" src="/images/weixinpay.png"/>微信支付</view>
+  <view class="sign {{on!=0?'show':''}}"> </view> 
+</view>
+<view class="term" id="1" catchtap="selectpayment">
+ <view><image class="mark" src="/images/dbpay.png"/>当币支付<text>（剩余金额￥{{wallet}}元）</text></view>
+ <view class="sign {{on!=1?'show':''}}"> </view> 
+ </view>
+
+</view>
+
+<view class="balance-wrap" style="position:fixed;bottom:0;width:100%;left:0;right:0;"> 
+    <view  class="balance-price balance-common">实付款:￥{{amount}}</view>
+    <view  class="balance-btn balance-common" catchtap="payup">立即支付</view>  
+</view>
+
+<view class="deliver-instruction {{!ondetill?'ondetill':''}}">
+<text>配送范围</text>
+<view class="deliver-instruction-detill">
+<text>订单满20元，且配送范围在已开通社区免费配送。</text>
+</view>
+</view>
+<view class="shade {{showmodel}}" wx:if="{{isShadow}}" catchtap="ondetill"></view>
+
+<keyboard amount="{{amount}}" password="{{password}}" hidderkeyboard="{{hidderkeyboard}}" paytoken="{{paytoken}}"  pickerShow="{{pickerShow}}" Shadow="{{Shadow}}" class="paytoken" bind:mytab="onMyEvent"></keyboard>

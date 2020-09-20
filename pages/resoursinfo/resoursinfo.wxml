@@ -1,0 +1,36 @@
+<!--pages/resoursinfo/resoursinfo.wxml-->
+<view class="goodstitle">您当前选择的是：<text>{{name}}</text></view>
+<form bindsubmit= "guide">
+<view class='ontextarea'>
+<label>详情描述：</label>
+<textarea name="goodsdetail" type="text" />
+</view>
+<view wx:if="{{onunit}}" class='itemterm'>
+<text>数量：</text>
+<input  name="goodsquantity" type="number" bindinput="valued" value="{{inputdata}}" /><text>{{unit}}</text>
+</view>
+<view wx:else class='itemterm'>
+<text>重量：</text>
+<input  name="goodsweight" type="number"  bindinput="valued" value="{{inputdata}}" /><text>kg</text>
+</view>
+<view wx:if="{{showattion}}" class="showattion">该品类暂无法评估价格，请填写详情，提交后将上门核实并估价</view>
+<view class="attions">
+<view>提示</view>
+<view class="attions-item">1.置换当币可在购物时使用，不兑换现金（1当币≈1元人民币）。</view>
+<view class="attions-item">2.置换物请保持干净整洁，并适量打包整理。</view>
+<view class="attions-item">3.请您配合社区运营人员上门时对您所置换物品的检查和整理。</view>
+</view>
+
+<view class="reserve-time">预约取货时间：
+  <picker mode="date" value="{{date}}" start="{{date}}" end="2099-12-31" bindchange="dateChange">
+   <input class="picker" value="{{currentdate}}" name="reservedate" style="width:75px" disabled="true"/></picker>
+  <picker mode="time" value="{{time}}" start="{{time}}" end="21:01" bindchange="freqChange">
+    <input class="picker" value="{{currenttime}}" name="reservetime" style="width:45px" disabled="true" bindfocus="modifytime"/></picker>
+  </view>
+
+<view id='payment'>
+<view id='stored'>预估：{{amount}}当币</view>
+<button size="default" type="primary" disabled='{{active}}' form-type="submit" class="btn">申请置换</button>
+</view>
+</form>
+

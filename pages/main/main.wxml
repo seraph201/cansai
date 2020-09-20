@@ -1,0 +1,43 @@
+<!--pages/main/main.wxml-->
+<swiper indicator-dots="true" autoplay="autoplay" class="slide-wrap">
+  <block wx:for="{{imgUrls}}"  wx:key="unique" >
+    <swiper-item>
+     <view data-url="{{item.url}}" catchtap="adnav"> <image src="{{item.imagesrc}}" class="slide-wrap-image"  /></view>
+    </swiper-item>
+  </block>
+ </swiper>
+ <view class="top-attion"><view class="communityinfo"><view class="community-info-label">查看已开通社区:</view><view class="community-info-name" catchtap="querycommunity">{{community}}</view></view><view class="Resources" catchtap="resourcesdisplace">资源置换</view></view>
+
+<view class="menu-opption">
+  <view wx:for="{{opptiondata}}" wx:key="unique" catchtap="menuopption" id="{{index}}" class="menu-opption-wrap" >
+      <image class="menu-opption-wrap-src"src="{{item.src}}"></image>
+      <view class="menu-opption-wrap-detill,{{current==index?'on':''}}">{{item.text}}</view>
+  </view>
+</view>
+
+<view class="recommend"><view class="seperator"></view><text>热销推荐</text><view class="seperator"></view></view>
+<view wx:if="{{ishaveChild}}">   
+<view class="bechoice-list">
+<view class="dechoice_item">
+  <view wx:for="{{bechoice_left}}" wx:key="unique" id="{{index}}"class="bechoice-wrap" catchtap="bechoice" data-area="false">
+    <image src="{{item.imglist[0].src}}" />
+    <view class="detill">
+       <view class="detill-title">{{item.name}}</view>      
+      <view class="detill-quote"><view class="detill-quote-price">￥{{item.price}}</view><view class="detill-quote-unit">/{{item.unit}}</view></view>
+    </view>
+  </view>
+  </view>
+  <view class="dechoice_item">
+   <view wx:for="{{bechoice_right}}" wx:key="unique" id="{{index}}"class="bechoice-wrap" catchtap="bechoice" data-area="true">
+    <image src="{{item.imglist[0].src}}" />
+    <view class="detill">
+       <view class="detill-title">{{item.name}}</view>       
+      <view class="detill-quote"><view class="detill-quote-price">￥{{item.price}}</view><view class="detill-quote-unit">/{{item.unity}}</view></view>
+    </view>
+  </view>
+  </view>
+
+</view>
+
+</view>
+<view class="nodata_text" wx:else>该分类暂无数据</view>

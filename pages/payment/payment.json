@@ -1,0 +1,9 @@
+{"navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "navigationBarTitleText": "等待买家付款",
+  "usingComponents": {
+    "keyboard": "/components/keyboard/keyboard"
+  }
+}

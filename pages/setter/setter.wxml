@@ -1,0 +1,5 @@
+<!--pages/setter/setter.wxml-->
+<view class="termlist">
+<view class ="term-item" catchtap="empower"><view>设定授权</view><view class="sign"></view></view>
+<view class ="term-item" catchtap="clearstorage"><view>清理缓存</view><view class="sign"></view></view>
+</view>

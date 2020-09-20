@@ -1,0 +1,9 @@
+/* pages/payperform/payperform.wxss */
+.performitem_success{display: flex;flex-direction: column;margin:1rem auto;align-items: center;}
+.performitem_content{display: flex;flex-direction: column;margin:3rem auto;align-items: center;font-size: small;}
+.mark{width:50rpx;height:50rpx;vertical-align: sub;margin-right:0.5rem;}
+.perform_sussecc{color:green;font-size: small;margin-top: 0.5rem;}
+.perform_font{font-weight: bolder;font-size: 25pt;}
+.payamount{font-weight: 800;font-size: x-large;text-align: center;margin-top: 0.2rem;}
+.payamount-last-child {font-size: xx-large;vertical-align: sub;}
+.btn{font-weight: normal !important;color:green;position: fixed;bottom:3rem;margin-left:auto;margin-right: auto;left:0;right:0;}

@@ -1,0 +1,24 @@
+<!--pages/classify/classify.wxml-->
+<view class="classifywrap">
+  <!--左侧栏-->
+  <view  class="nav_left_wrap">         
+    <view wx:for="{{classify}}" wx:key="id" class="nav_left_items {{curNav == index ? 'active' : ''}}" bindtap="switchRightTab" id="{{index}}" >{{item.name}}</view>  
+  </view>
+  <!--右侧栏-->
+  <view class="nav_right_wrap">
+    <!--如果有数据，才遍历项-->
+    <view wx:if="{{classify[curIndex].ishaveChild}}"  class="nav_right">      
+        <view class="nav_right_items" wx:for="{{classify[curIndex].classifylist}}" wx:key="unique" catchtap="classifyShow" data-datalist="{{classify[curIndex].classifylist}}" id="{{index}}"   >         
+            <image src="{{item.imglist[0].src}}" />
+            <view class="detill">
+            <view class="detill-title">{{item.name}}</view>      
+            <view class="detill-quote"><view class="detill-quote-price">￥{{item.price}}</view><view class="detill-quote-unit">/{{item.unity}}</view></view>
+            </view>
+        </view>
+      
+    </view>
+    
+    <view class="nodata_text" wx:else>该分类暂无数据</view>
+  </view>
+
+</view>

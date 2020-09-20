@@ -1,0 +1,44 @@
+<!--pages/calathus/calathus.wxml-->
+<view class="collect-status-wrap"><view>共{{count}}件</view><view catchtap="manage" class="collect-status {{!status?'':'on'}}">{{!status?'管理':'完成'}}</view></view>
+
+<view wx:if="{{ishavedata}}" class="calathusdata">
+<view wx:for="{{bechoice}}" wx:key="unique" id="{{index}}"class="bechoice-wrap" >
+ <view  class="showradio" ><icon wx:if="{{item.check}}" size="26" type="success" catchtap="icon" data-index="{{index}}"/><icon wx:else icon type="circle" size="26"catchtap="iconon" data-index="{{index}}"/></view>
+  <view><image src="{{item.imglist[0].src}}"style="width:200rpx;height:200rpx"/></view>
+  <view class="bechoice-detill">
+    <view class="bechoice-detill-name">{{item.name}}</view>
+    <view class="bechoice-detill-price">{{item.price}}/{{item.unity}}</view>
+    <view class="amount">
+      <view class="amount-label">数量:</view>
+      <view class="amount-control">
+        <view class="stepper" id='variable'> 
+          <!-- 减号 -->
+          <text class="{{minusStatus}}" bindtap="bindMinus"  id="{{index}}">-</text> 
+          <!-- 数值 -->
+          <input type="number" bindchange="bindManual" value="{{item.num}}" disabled='true' /> 
+          <!-- 加号 -->
+          <text class="normal" bindtap="bindPlus"  id="{{index}}">+</text> 
+        </view>
+      </view>
+    </view>
+   
+  </view>
+  
+</view>
+
+</view>
+<!--菜单为空时-->
+<view wx:else class="basket">
+<image src="/images/basket.png" style="width:300rpx;height:200rpx;"/>
+<text style="font-size:8pt;">您的购物篮还空着呢！</text>
+</view>
+<!--底部-->
+<view class="balance-wrap" style="position:fixed;bottom:0;width:100%;left:0;right:0;">
+  <radio  checked="{{check}}" bindtap='radiocon' id="{{checked}}" color="#FF3300"  style="font-size:10pt;margin-left:0.5rem;">全选</radio>
+
+  <view wx:if="{{show}}" class="balance-btn balance-common" catchtap="dele">删除</view>
+  <view wx:else>
+    <view  class="balance-price balance-common">合计:￥{{amount}}</view>
+    <view  class="balance-btn balance-common" catchtap="payup">去结算</view>
+  </view>
+</view>

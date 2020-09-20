@@ -1,0 +1,64 @@
+<!--pages/productdetails/productdetails.wxml-->
+<view class="product-slide">
+<swiper  class="slide-wrap" bindchange="slidechange">
+  <block wx:for="{{imgUrls}}"  wx:key="unique" >
+    <swiper-item>
+      <image src="{{item.src}}" class="slide-wrap-image"  />
+    </swiper-item>
+  </block>
+ </swiper>
+ <view class="counter">{{curkey}}/{{tatal}}</view>
+ </view>
+
+<view class="term-list">
+  <view class="term term-item"><view class="term-deltill">品名:</view><view class="sign">{{name}}</view></view>
+  <view class="term term-item"><view class="term-deltill">商品单价:</view><view class="sign">￥{{price}}元</view></view>
+  <view class="term term-item"><view class="term-deltill">计量单位：</view><view class="sign">{{unity}}</view></view>
+  <view class="term term-item"><view class="term-deltill">产地：</view><view class="sign">{{originplace}}</view></view>
+</view>
+
+<view class="product-attention">
+<text>注意事项</text>
+<view wx:if="{{!attentionishave}}" class="product-attention-replace">暂无内容</view>
+<view wx:else>
+<view>123</view>
+</view>
+</view>
+
+<view class="balance-wrap" style="position:fixed;bottom:0;width:100%;left:0;right:0;z-index:100;">
+  <view class="menuitem">
+    <view class="sign" catchtap="returnhome"><image class="mark" src="/images/main.png"></image> <text class="menu-detill">首页</text></view>
+    <view class="sign" catchtap="barsket"><view style="position:relative;"><image class="mark" src="/images/storebarsket.png"></image> <mp-badge ext-class="{{!showbadge?'':'onbadge'}}" content="{{number}}" style="position: absolute;top: .10em;right: -.4em;"/></view><text class="menu-detill">水果篮</text></view>
+   <view  class="sign" ><image class="mark" wx:if="{{collectshow}}" catchtap="oncollect" src="/images/selectcollect.png"/><image class="mark"  wx:else  catchtap="collect" src="/images/collect.png"/><text class="menu-detill">收藏</text></view>  
+  
+  </view>
+  <view>
+    <view  class="balance-collect balance-common" id="0" catchtap="joincollect">加入水果篮</view>
+    <view  class="balance-btn balance-common" id="1"  catchtap="payup">立即购买</view>
+  </view>
+</view>
+
+
+<view class="shopping-wrap {{modelShow}}">
+  <view class="shopping ">
+    <view class="goods">
+      <view class="commodity">
+        <view class="commodity-image"><image src="{{imgUrls[0].src}}"/></view>
+        <view class="commodity-detill"><view>{{name}}</view><view style="margin-top:50rpx;">单价{{price}}</view></view>
+       </view>
+      <view class="cancel" catchtap="cancelcollect">取消</view>
+    </view>
+    <view class="amount">
+      <view class="amount-label">购买数量:</view>
+      <view class="amount-control">
+        <view class="stepper" id='variable'> 
+          <text class="{{minusStatus}}" bindtap="bindMinus">-</text>  <!-- 减号 -->
+          <input type="number" bindchange="bindManual" value="{{num}}" disabled='true' />   <!-- 数值 -->
+          <text class="normal" bindtap="bindPlus">+</text>   <!-- 加号 -->
+        </view>
+      </view>
+    </view>
+    <view class="btn" catchtap="confirmcollect">确定</view>
+  </view>
+</view>
+<view class="shade {{showmodel}}" wx:if="{{isShadow}}"></view>

@@ -1,0 +1,36 @@
+/* pages/collect/collect.wxss */
+page {background-color: rgba(237, 241, 243, 0.445);} 
+.collect-status-wrap{border-top: 1px solid rgb(218, 214, 214);border-bottom: 1px solid rgb(218, 214, 214);padding:0.2rem;text-align: right;}
+.collect-status{padding:0.5rem;width:20%;background-color: red;color:#fff;display: inline-block;text-align:center;}
+.on{background-color: rgb(245, 219, 133);color:rgb(119, 115, 115);}
+
+.bechoice-wrap{background-color:#fff;display: flex;flex-flow: row nowrap;margin: 0.5rem auto;width:100%;align-items: center;padding-left:0.5rem;}
+.image-wrap{margin-left:1rem;}
+.bechoice-detill{font-size:10pt;width:100%;padding:0.5rem;}
+.bechoice-detill-name{width:95%;height:2.5rem;}
+.amount{display:flex;flex-flow:row norap;padding:0.2rem;align-items: center;}
+.amount-label{vertical-align: middle;}
+.amount-control{border-radius:3px;margin-left:0.5rem; }
+/*加号和减号*/
+.stepper text {border: 1px solid #ccc; width: 20px;line-height:26px;text-align: center;float: left;}   
+/*数值*/
+.stepper input {width: 20px;height:26px;float: left;margin: 0 auto;text-align: center;font-size: 12px; 
+/*给中间的input设置左右边框即可*/
+  border: 1px solid #ccc; 
+ } 
+/*普通样式*/
+.stepper .normal{color: black;} 
+/*禁用样式*/
+.stepper .disabled{color: #ccc;}
+.bechoice-detill-price{color:red;margin:0.5rem;} 
+
+
+.showradio{width: 20%;}
+
+
+
+.balance-wrap{display: flex;flex-flow:row nowrap;justify-content: space-between;align-items: center;border-top:1px solid rgb(235, 233, 233);background-color: #fff;}
+.balance-common{display:inline-block;}
+.balance-price{color:red;font-size: 10pt;line-height: 110rpx;}
+.balance-btn{width:180rpx;height:110rpx;background-color: red;color:#fff;text-align:center;line-height: 110rpx;font-size: 10pt;margin-left: 20rpx;}
+

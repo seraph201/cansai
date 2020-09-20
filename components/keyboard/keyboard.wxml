@@ -1,0 +1,43 @@
+<!--components/keyboard/keyboard.wxml-->
+<view class="paytoken" wx:if="{{paytoken}}"style="top:{{isheight? '15vh':'5vh' }}">
+<view class="paytitle"><view class="paycontrol" catchtap="falsepaytoken">X</view></view>
+<view class="paymark">汇优e家</view>
+<view class="payamount"><text>￥</text><text class="payamount-last-child">{{amount}}</text></view>
+<view class="paymentstyle"><view>支付方式</view><view classs="paymentstyle-detill"><image class="mark" src="/images/dbpay.png"/><text>当币</text></view></view>
+<view class='password-input' catchtap="controlkeyboard">
+        <view><text style="display:{{inputPassword[0]?'':'none'}}"></text></view>
+        <view><text style="display:{{inputPassword[1]?'':'none'}}"></text></view>
+        <view><text style="display:{{inputPassword[2]?'':'none'}}"></text></view>
+        <view><text style="display:{{inputPassword[3]?'':'none'}}"></text></view>
+        <view><text style="display:{{inputPassword[4]?'':'none'}}"></text></view>
+        <view><text style="display:{{inputPassword[5]?'':'none'}}"></text></view>
+ </view>
+</view>
+
+<view class="keyboard-box" wx:if="{{hidderkeyboard}}">
+<view class="conctrolbox"><view class="sign" catchtap="conctolfalse"></view></view>
+<view class="keyboard-row">
+<view class="keyboard-row-item right-border" data-key="1" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>1</view>
+<view class="keyboard-row-item" data-key="2" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>2</view>
+<view class="keyboard-row-item left-border" data-key="3" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>3</view>
+</view>
+<view class="keyboard-row">
+<view class="keyboard-row-item right-border" data-key="4" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>4</view>
+<view class="keyboard-row-item" data-key="5" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>5</view>
+<view class="keyboard-row-item left-border" data-key="6" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>6</view>
+</view>
+<view class="keyboard-row">
+   <view class="keyboard-row-item right-border" data-key="7" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>7</view>
+   <view class="keyboard-row-item" data-key="8" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>8</view>
+   <view class="keyboard-row-item left-border" data-key="9" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>9</view>
+</view>
+<view class="keyboard-row">
+<view class="keyboard-row-item"></view>
+<view class="keyboard-row-item right-border left-border" data-key="0" hover-class='active' hover-stay-time='100' bindtap='inputPassword'>0</view>
+<view class="keyboard-row-item  del-control" hover-class='active' hover-stay-time='100' catchtap="delpassword"><view class="d4"></view><view class="dd">X</view></view>
+</view>
+</view>
+
+<view class='comshadow {{pickerShow}}'  wx:if="{{Shadow}}"></view> 
+
+

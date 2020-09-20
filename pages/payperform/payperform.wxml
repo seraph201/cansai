@@ -1,0 +1,6 @@
+<!--pages/payperform/payperform.wxml-->
+<view class="performwrap">
+<view class="performitem_success"><image class="mark" src="/images/dbpay.png"/><view class="perform_sussecc">支付成功</view></view>
+<view class="performitem_content"><view>汇优e家</view><view class="payamount"><text>￥</text><text class="payamount-last-child">{{amount}}</text></view></view>
+<button class="btn" catchtap="finish">完成</button>
+</view>

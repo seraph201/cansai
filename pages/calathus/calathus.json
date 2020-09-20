@@ -1,0 +1,9 @@
+{"navigationBarTitleText": "我的水果篮",
+"navigationBarBackgroundColor": "#fff",
+"navigationBarTextStyle": "black",
+"backgroundColor": "#eeeeee",
+"backgroundTextStyle": "light",
+ "usingComponents": {
+    
+  }
+}

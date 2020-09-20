@@ -1,0 +1,45 @@
+<!--pages/dbaccount/dbaccount.wxml-->
+<view class="container">
+<view class="recode_account">我的当币账户</view>
+<view>{{count}}</view>
+  <view class="recode">
+    <view  class="recode-pro">总申请金额{{browse}}元</view>
+    <view  class="recode-pro">总消费金额{{order}}元</view>
+  </view>
+</view>
+
+<view style="margin-bottom:2rem">
+<view class="flow-wrap">
+<view class="flow-wrap-item {{curIndex==index?'on':''}}" wx:for="{{accountrecode}}" wx:key="id" id="{{index}}" catchtap="changflow">{{item.title}}</view>
+</view>
+<view wx:for="{{accountrecode[curIndex].flowlist.data}}" wx:key="id"  class="flowinfo-item">
+  <view><label>订单编号：</label><text>{{item._id}}</text></view>
+  <view wx:for="{{item.order}}" wx:key="id"  class="order-resourse">  
+    <view><label>品名：</label>{{item.name}}</view>
+    <view><label>数量：</label><text>{{item.num}}</text></view>    
+    </view>
+  <view class="order-data">
+    <view><label>申请日期:</label><text>{{item.date}}</text></view>
+    <view><label>申请时间:</label><text>{{item.time}}</text></view>
+  </view>
+  <view class="order-data">
+    <view><label>总价:</label><text>{{m1.getMax(item.order)}}当币</text></view>
+    <view wx:if="{{item.convert}}"><label>状态:</label><text class="red">已消费</text></view>
+    <view wx:else><label>状态:</label><text class="{{item.vet?'green':'red'}}">{{item.vet?'已通过':'审核中'}}</text></view>
+  </view>
+
+</view>
+<view style="font-size:9pt;text-align:center;margin-top:1rem;">仅显示近期流水</view>
+</view>
+
+<wxs module="m1">
+  var getMax = function(array) {
+    var x= [];
+    for (var i = 0; i < array.length; ++i) {       
+      var data=(array[i].price*array[i].num)
+      x.push(data)     
+    }
+    return (x.reduce(function(a,b){return a + b;},0)).toFixed(2);
+  }  
+  module.exports.getMax = getMax;
+  </wxs>

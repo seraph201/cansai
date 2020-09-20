@@ -1,0 +1,5 @@
+/* pages/setter/setter.wxss */
+.term-item{display:flex;flex-flow:row nowrap;line-height:2.5rem;padding:0 1rem;background-color:#fff;font-size:9pt;border-bottom:1px solid rgb(196, 191, 191);position: relative;justify-content:space-between;height:2.5rem;align-items: center;position: relative;}
+.sign{border-right:1px solid black;border-bottom: 1px solid black;width:20rpx;height:20rpx;transform:rotate(-45deg); }
+
+.getphone{position:absolute;top:0rpx;opacity: 0.1;padding:0;background-color:none; margin:0;height:2.5rem;width:100% !important;}

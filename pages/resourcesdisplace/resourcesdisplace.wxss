@@ -1,0 +1,32 @@
+/* pages/resourcesdisplace/resourcesdisplace.wxss */
+.container{background: linear-gradient(to bottom, #65f590 0%,rgb(86, 206, 92) 100%);margin-bottom:0.8rem;color: #fff;padding: 1rem;}
+.container button{font-size: 9pt !important;margin-right:0 !important;font-weight: normal !important;}
+
+.resource-title{text-align: center;margin-top: 1.5rem;}
+.menu-opption{font-size:8pt;color:#929090;padding:1.5rem; border-top: 1px solid rgb(221, 218, 218);margin-top: 0.5rem;  }
+.menu-wrap{display:grid;grid-template-columns: 1fr 1fr 1fr 1fr;grid-gap: 15px;margin:0.5rem auto;width:95%;justify-content:center;align-content: center;}
+.menu-opption-wrap{text-align: center;border:1px solid rgb(236, 234, 234);padding:5px;}
+.menu-opption-wrap-src{display:inline-block;width:90rpx;height:90rpx;margin-bottom:5rpx;margin-left:auto;margin-right: auto;}
+.menu-opption-wrap-detill{border:0;}
+.on{color:red;}
+.applyclassify{font-size: 9pt;border-radius: 20px;width: 100% !important;margin-top: 3rem;color: rgb(163, 159, 159);}
+
+/* 遮罩 */
+.shade{width: 100%;height: 100%;position: fixed;top: 0;left: 0; background-color:rgba(0,0,0,0.3);z-index: 2;}
+.com-picker-shadow  .true{ -webkit-transition: opacity 0.35s, visibility 0.35s;transition: opacity 0.35s, visibility 0.35s;visibility: visible;opacity: 1;}
+.com-picker-shadow .false{visibility: hidden;opacity: 0;  -webkit-transition: opacity 0.35s, visibility 0.35s;transition: opacity 0.35s, visibility 0.35s;}
+
+
+.box {background:#fff;text-align:center;font-size:28rpx; color:#999; margin-left: auto;margin-right: auto; width:265px;position: fixed;top: 8rem; z-index: 100;box-sizing: border-box;left:0;right:0;border-radius:15px;overflow: hidden;}
+.warn{color: red;margin-top: 1.5rem;}
+.colum{display: flex;flex-flow: row nowrap;margin: 1rem auto;align-items: center;width:380rpx;/* border: 1rpx solid black; */}
+.list{width:80rpx;}
+.input{width: 300rpx;height: 60rpx;border: 1rpx solid #999;text-align: start;padding-left:0.2rem}
+.button {display:flex;border-top:1px solid rgb(209, 205, 205);margin-top:2rem;}
+.button_item{border-radius: 0px;flex:1;font-weight: normal;padding:0.7rem;background-color: #fff;}
+.button_apply{border-left: 1px solid rgb(209, 205, 205);}
+/* 条约 */
+#confirm{width:50%;margin:10px auto;font-size:10pt;text-align: center;}
+.checkappoint{zoom:0.6;vertical-align: middle;}
+.radio-wrap{display: flex;flex-flow: row nowrap;align-items: center;}
+.contract{text-decoration:underline;color:rgb(166, 204, 240);font-size: 9pt;}

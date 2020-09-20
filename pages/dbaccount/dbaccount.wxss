@@ -1,0 +1,14 @@
+/* pages/dbaccount/dbaccount.wxss */
+.container{background: linear-gradient(to bottom, #65f590 0%,rgb(86, 206, 92) 100%);margin-bottom:0.8rem;color: #fff;padding: 1.5rem;}
+.recode_totali{text-align: center;margin-bottom: 20rpx;}
+.recode{display:flex;flex-flow: row wrap;justify-content: space-between;width:100%;margin-top: 2rem;}
+.recode-pro{flex: 1;height: 2rem;text-align: center;line-height: 2rem;font-size: 10pt;}
+.recode :first-child{border-right: 1px solid gold;}
+
+.flow-wrap{display:flex;flex-flow:row nowrap;margin-top: 0.5rem;background-color: chartreuse;}
+.flow-wrap-item{flex:1;height: 2.5rem;text-align: center;line-height: 2.5rem;font-size: 10pt;}
+.flowinfo-item{margin-top: 0.5rem; background-color: #fff;border:1px solid black;padding:1rem;font-size: 9pt;}
+.on{background-color: #28382d;color:white}
+.order-resourse,.order-data{display: flex;flex-flow: row nowrap;justify-content: space-between;margin-top: 0.3rem;}
+.green{color:green;}
+.red{color:red;}

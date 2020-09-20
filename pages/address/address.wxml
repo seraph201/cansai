@@ -1,0 +1,49 @@
+<!--pages/address/address.wxml-->
+<view wx:if="{{ishave}}" class="addressinfo-wrap">
+<radio-group bindchange="selectradio">
+<view wx:for="{{addresslist}}" wx:key="unique" class="addressinfo" >
+  <view class="address-per"><view>收货人:{{item.name}}</view><view class="address-tel">{{item.tel}}</view></view>
+  <view>收货地址:{{item.community}}{{item.detail}}</view>
+  <view class="address-fun">
+    <view class="address-default {{item.check?'on':''}}">  
+    <radio value="{{index}}" checked="{{item.check?'true':''}}" style="zoom: .6;vertical-align:middle;margin-top:-10px;"></radio> {{item.check?'已设为默认':'设为默认'}}
+    </view>
+    <view class="address-nav">
+       <view class="address-opt" id="{{index}}" catchtap="del">删除</view>
+       <view class="address-opt" id="{{index}}" catchtap="edit">编辑</view>
+       <view class="address-opt" id="{{index}}" catchtap="top">置顶</view></view>
+  </view>
+</view>
+</radio-group>
+</view>
+
+<view class="addrget">
+<view  class="address addnew" catchtap="addrnew">新增收货地址</view>
+</view>
+
+<view class="addressform" wx:if="{{ishaveinput}}">
+<view class="addressform-title"><text>添加收货地址</text><view class="addressform-cancel"catchtap="inputcancel">X</view></view>
+<form bindsubmit="{{formSubmit}}">
+<view class='itemterm'>
+<label>收货人：</label>
+<input  name="name" type="text"  maxlength='30' value='{{name}}'/>
+</view>
+<view class='itemterm'>
+<label>手机号：</label>
+<input  name="tel" type="number" maxlength='11'  value='{{tel}}' style="width:40%;" />
+<button class="getphone" size='mini' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">自动获取</button>
+</view>
+<view class='itemterm'>
+<label>社区：</label>
+<input  type="text" placeholder="社区名称" placeholder-style="font-size:9pt;" bindblur="querycommunity" name="community" value='{{community}}'></input>
+</view>
+<view class='itemterm'>
+<label>详细：</label>
+<input  type="text" placeholder="x号楼x层xxxx室" placeholder-style="font-size:9pt;"  name="detail" value='{{detail}}'></input>
+</view>
+ <button class="addressform-save" formType="submit">保存</button>
+
+</form>
+</view>
+
+<view class="shade {{showmodel}}" wx:if="{{isShadow}}"></view>

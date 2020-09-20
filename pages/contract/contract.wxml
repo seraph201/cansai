@@ -1,0 +1,5 @@
+<!--pages//contract/contract.wxml-->
+<view class="activity-title">绿色资源置换活动</view>
+<view class="activity-content">为积极倡导绿色行动，促进资源循环再利用，共建美好家园，由三河汇尤佳科技有限公司推出环保废旧物品置换活动！本活动不兑换现金，仅用于在本小程序换取等值商品。如您对本活动有任何疑问，应向客服咨询。你参与本活动即视为你已阅读并同意本活动的内容。</view>
+<view style="text-align:center;color:red;margin-top:1rem;">*如您首次创建账号，将在下次登陆时启用。</view>
+<view style=" text-align: center;"><button class="understand" size="mini" catchtap="read">已阅</button></view>

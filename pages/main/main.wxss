@@ -1,0 +1,39 @@
+.slide-wrap{width:100%;height:9rem;border:0;margin:0rem auto;}
+.slide-wrap-image{height:9rem;width:100%;}
+.wx-swiper-dot-active::before{background-color: red}
+.top-attion{display: flex;flex-flow:row nowrap;justify-content: space-between;width:95%;margin:0.5rem auto;font-size: 9pt;padding:0.5rem;}
+.communityinfo{display: flex;flex-flow:row nowrap;}
+.community-info-label{color: red;}
+.community-info-name{margin-left:0.5rem;color:rgb(207, 202, 202);}
+.Resources{color:rgb(207, 202, 202);padding-left:0.5rem;border-left:1px solid rgb(207, 202, 202);}
+
+.menu-opption{font-size:8pt;color:#929090;padding:0.5rem;display:grid;border-top: 1px solid rgb(221, 218, 218); border-bottom: 1px solid rgb(221, 218, 218);grid-template-columns:repeat(5,20%);grid-row-gap: 5rpx;grid-column-gap:5rpx;}
+.menu-opption-wrap{text-align: center;margin:0.5rem;}
+.menu-opption-wrap-src{display:inline-block;width:90rpx;height:90rpx;margin-bottom:10rpx;margin-left:auto;margin-right: auto;}
+.menu-opption-wrap-detill{border:0;}
+.on{color:red;}
+
+.srroll-show-wrap{white-space: nowrap;height:6.5rem;margin-top:1.5rem;padding:0.5rem;border:1px solid black;}
+.srroll-show-wrap-project{display:inline-block;border-radius: 5%;width: 80%;margin-left:1rem;overflow: hidden;}
+.srroll-show-wrap-project-image{height:6rem;}
+
+
+.recommend{margin:1.5rem auto;text-align:center;color:red;font-weight:bold;}
+.recommend text{margin-left:0.2rem;margin-right:0.2rem;}
+.seperator{display: inline-block;border:2px solid red;width:10%;vertical-align: middle;}
+
+
+.bechoice-list{display:flex;flex-flow:row nowrap;width:95%;margin-left:auto;margin-right: auto;margin-bottom: 6rem;}
+.dechoice_item{flex:1;padding:0 0.2rem}
+.bechoice-wrap{border:0;margin-top:0.5rem;border-radius: 10px;overflow: hidden;border: 1px solid rgb(226, 223, 223);}
+.bechoice-wrap image{width:100%;height:300rpx;}
+.detill{background-color:#fff;margin-bottom: 1.5rem;}
+.detill-title{margin-top:0.2rem;margin-left:0.2rem;font-size: 9pt;padding:2px;font-weight:bold;}
+.detill-quote{display: flex;flex-flow: row nowrap;align-items: center;padding:0 0.2rem;margin:0.5rem auto;font-size: 10pt;font-weight:bolder;}
+.detill-quote-price{color:red;}
+.detill-quote-unit{margin-left:0.2rem;}
+.trolley{background-color: red;width:80rpx;height:80rpx;border-radius:50%;text-align: center;position:relative;}
+.trolley image{width:50rpx;height:50rpx;position:absolute;top:50%;left:50%;margin-top: -25rpx;margin-left:-25rpx;}
+
+/*无内容时间输出*/
+.nodata_text{color: black;font-size: 14px;text-align: center;margin-top:6rem;margin-bottom: 6rem;}
